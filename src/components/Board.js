@@ -145,8 +145,10 @@ class Board extends Component {
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderLists() {
     return (
-      <div className="board-lists">
-        { /* render the lists */ }
+      <div className='board-lists'>
+        {this.state.listOrder.map((listId, index) => (
+          <li key={listId}>{index}</li>
+        ))}
       </div>
     );
   }
@@ -165,12 +167,12 @@ class Board extends Component {
   // - Add the onDragEnd prop to the <DragDropContext> component
   render() {
     return (
-      <div className="board">
-        { /* render the lists */ }
-        { /* render the list creation form */ }
+      <div className='board'>
+        {/* render the lists */}
+        {/* render the list creation form */}
       </div>
     );
   }
-};
+}
 
 export default Board;
