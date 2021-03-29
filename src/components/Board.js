@@ -145,11 +145,13 @@ class Board extends Component {
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderLists() {
     return (
-      <div className='board-lists'>
-        {this.state.listOrder.map((listId, index) => (
-          <li key={listId}>{index}</li>
+      <ul className='board-lists'>
+        {this.state.listOrder.map((listId, index, title) => (
+          <li key={listId}>
+            <CardsList id={listId} title={this.state.listOrder.title} />
+          </li>
         ))}
-      </div>
+      </ul>
     );
   }
 
@@ -168,7 +170,7 @@ class Board extends Component {
   render() {
     return (
       <div className='board'>
-        {/* render the lists */}
+        {this.renderLists()}
         {/* render the list creation form */}
       </div>
     );
