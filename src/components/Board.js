@@ -30,7 +30,13 @@ class Board extends Component {
   // TODO: implement the componentDidMount lifecycle method to fetch data and init the component state.
   // Tips:
   // - Use the `this.setState` method to update the component state
-  componentDidMount() {}
+  componentDidMount() {
+    this.setState({
+      lists: data.lists,
+      cards: data.cards,
+      listOrder: data.listOrder,
+    });
+  }
 
   // TODO: implement the handleAddList method to add a new list to the board.
   // Tips:
@@ -144,15 +150,27 @@ class Board extends Component {
   // - Add the children function that returns your board lists component and bind everything together
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderLists() {
-    return (
-      <ul className='board-lists'>
-        {this.state.listOrder.map((listId, index, title) => (
-          <li key={listId}>
-            <CardsList id={listId} title={this.state.listOrder.title} />
-          </li>
-        ))}
-      </ul>
-    );
+    return this.state.listOrder.map((listId, index) => {
+      const list = this.state.lists[listId];
+      console.log(this.state);
+      console.log(list);
+      const cards = list.cardIds.map(key => this.state.cards[key]);
+      return (
+        <li key={list.id}>
+          <CardsList id={listId} title={list.title} cards={list.cards} />
+        </li>
+      );
+    });
+
+    // return (
+    //   <ul className='board-lists'>
+    //     {this.state.listOrder.map((listId, index, title, cards) => (
+    //       <li key={listId}>
+    //         <CardsList id={listId} index={index} title={title} cards={cards} />
+    //       </li>
+    //     ))}
+    //   </ul>
+    // );
   }
 
   // TODO: implement the renderNewList method to render the list creation form.
