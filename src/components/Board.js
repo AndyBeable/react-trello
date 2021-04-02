@@ -152,11 +152,11 @@ class Board extends Component {
   renderLists() {
     return this.state.listOrder.map((listId, index) => {
       const list = this.state.lists[listId];
-      console.log(this.state);
       console.log(list);
       const cards = list.cardIds.map(key => this.state.cards[key]);
+
       return (
-        <li key={list.id}>
+        <li key={list.id} className='board-lists'>
           <CardsList id={listId} title={list.title} cards={list.cards} />
         </li>
       );
