@@ -141,7 +141,7 @@ class CardsList extends Component {
           {<h3>{this.props.title}</h3>}
           {<Menu />}
         </div>
-        {/* render the number of cards in this list */}
+        {<p>{this.props.cardIds.length} cards</p>}
       </div>
     );
   }
