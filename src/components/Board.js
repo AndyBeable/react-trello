@@ -152,9 +152,8 @@ class Board extends Component {
   renderLists() {
     return this.state.listOrder.map((listId, index) => {
       const list = this.state.lists[listId];
-      // console.log(list);
-      const cards = list.cardIds.map(key => this.state.cards[key]);
-      console.log(cards.length);
+      const cards = list.cardIds.map(id => this.state.cards[id]);
+      console.log(cards);
 
       return (
         <li key={list.id} className='board-lists'>
@@ -167,16 +166,6 @@ class Board extends Component {
         </li>
       );
     });
-
-    // return (
-    //   <ul className='board-lists'>
-    //     {this.state.listOrder.map((listId, index, title, cards) => (
-    //       <li key={listId}>
-    //         <CardsList id={listId} index={index} title={title} cards={cards} />
-    //       </li>
-    //     ))}
-    //   </ul>
-    // );
   }
 
   // TODO: implement the renderNewList method to render the list creation form.

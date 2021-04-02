@@ -159,7 +159,7 @@ class CardsList extends Component {
   // - Add the children function that returns your cards and bind everything together
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderCards() {
-    return <ol className='cards'>{/* render the cards */}</ol>;
+    return <ol className='cards'>{<Card />}</ol>;
   }
 
   // TODO: implement the renderFooter method to render the list footer UI.
@@ -181,7 +181,7 @@ class CardsList extends Component {
     return (
       <div className='cards-list'>
         {this.renderHeader()}
-        {/* render cards */}
+        {this.renderCards()}
         {/* render list footer */}
         {/* render card editor */}
       </div>
