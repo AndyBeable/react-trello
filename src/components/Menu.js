@@ -16,15 +16,15 @@ import Popover from './Popover';
  * - Should render the lists of actions inside a Popover component if the menu is open
  * - The Popover component should be mounted only if the menu is open
  * - Each list of actions should be separated by an horizontal line (use a <hr> element)
- * 
+ *
  * Tips:
  * - You can use the 'menu' CSS class for styling
- * 
- */ 
-const Menu = (props) => (
-  <div className="menu">
-    { /* render the menu icon */ }
-    { /* render the lists of actions */ }
+ *
+ */
+const Menu = props => (
+  <div className='menu'>
+    {<MenuIcon />}
+    {/* render the lists of actions */}
   </div>
 );
 
@@ -35,10 +35,10 @@ Menu.propTypes = {
     PropTypes.arrayOf(
       PropTypes.shape({
         onClick: PropTypes.func,
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
       })
     )
-  )
+  ),
 };
 
 export default Menu;

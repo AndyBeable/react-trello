@@ -139,7 +139,7 @@ class CardsList extends Component {
       <div className='cards-list-header'>
         <div className='cards-list-title'>
           {<h3>{this.props.title}</h3>}
-          {/* render the Menu component */}
+          {<Menu />}
         </div>
         {/* render the number of cards in this list */}
       </div>
