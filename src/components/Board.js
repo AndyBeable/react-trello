@@ -152,7 +152,7 @@ class Board extends Component {
   renderLists() {
     return this.state.listOrder.map((listId, index) => {
       const list = this.state.lists[listId];
-      const cards = list.cardIds.map(id => this.state.cards[id]);
+      const cards = list.cardIds.map((id) => this.state.cards[id]);
       console.log(cards);
 
       return (
