@@ -141,7 +141,7 @@ class CardsList extends Component {
           {<h3>{this.props.title}</h3>}
           {<Menu />}
         </div>
-        {<p>{this.props.cardIds.length} cards</p>}
+        {<p>{this.props.cards.length} cards</p>}
       </div>
     );
   }
@@ -159,7 +159,16 @@ class CardsList extends Component {
   // - Add the children function that returns your cards and bind everything together
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderCards() {
-    return <ol className='cards'>{<Card />}</ol>;
+    console.log(this.props.cards);
+    return (
+      <ol className='cards'>
+        {this.props.cards.map((card, index) => (
+          <li key={card.id}>
+            <Card {...card} index={index} />
+          </li>
+        ))}
+      </ol>
+    );
   }
 
   // TODO: implement the renderFooter method to render the list footer UI.

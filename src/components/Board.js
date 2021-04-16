@@ -160,8 +160,8 @@ class Board extends Component {
           <CardsList
             id={listId}
             title={list.title}
-            cards={list.cards}
-            cardIds={list.cardIds}
+            cards={cards}
+            index={index}
           />
         </li>
       );
