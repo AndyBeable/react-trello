@@ -27,7 +27,12 @@ import Tag from './Tag';
  */
 const Card = ({ ...card }) => (
   <div className='card'>
-    {/* render tags list */}
+    {
+      <div>
+        <span class='tag'>{card.tags[0]}</span>
+        <span class='tag'>{card.tags[1]}</span>
+      </div>
+    }
     {
       <p>
         #{card.number} {card.description}

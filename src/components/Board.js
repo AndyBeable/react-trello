@@ -155,14 +155,16 @@ class Board extends Component {
       const cards = list.cardIds.map((id) => this.state.cards[id]);
 
       return (
-        <li key={list.id} className='board-lists'>
-          <CardsList
-            id={listId}
-            title={list.title}
-            cards={cards}
-            index={index}
-          />
-        </li>
+        <ul key={list.id} className='board-lists'>
+          <li>
+            <CardsList
+              id={listId}
+              title={list.title}
+              cards={cards}
+              index={index}
+            />
+          </li>
+        </ul>
       );
     });
   }
