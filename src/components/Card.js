@@ -25,10 +25,14 @@ import Tag from './Tag';
  * - Add the children function that returns your card component and bind everything together
  * --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md#children-function-render-props--function-as-child
  */
-const Card = (props) => (
+const Card = ({ ...card }) => (
   <div className='card'>
     {/* render tags list */}
-    {/* render card number and description */}
+    {
+      <p>
+        #{card.number} {card.description}
+      </p>
+    }
   </div>
 );
 
