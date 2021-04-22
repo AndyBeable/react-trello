@@ -29,7 +29,7 @@ const Card = ({ ...card }) => (
   <div className='card'>
     {
       <div>
-        <span class='tag'>{card.tags[0]}</span>
+        <span class='tag'>{card.tags}</span>
         <span class='tag'>{card.tags[1]}</span>
       </div>
     }
