@@ -27,12 +27,9 @@ import Tag from './Tag';
  */
 const Card = ({ ...card }) => (
   <div className='card'>
-    {
-      <div>
-        <span class='tag'>{card.tags}</span>
-        <span class='tag'>{card.tags[1]}</span>
-      </div>
-    }
+    {card.tags.map((tag, i) => {
+      <Tag key={i} text={tag} />;
+    })}
     {
       <p>
         #{card.number} {card.description}
