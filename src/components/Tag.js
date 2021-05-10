@@ -14,7 +14,11 @@ import PropTypes from 'prop-types';
  * - You can use the 'tag' CSS class for styling
  *
  */
-const Tag = (props) => null;
+const Tag = (props) => (
+  <span className='tag'>
+    <Tag key={props.tags.i} text={props.tag} />
+  </span>
+);
 
 Tag.propTypes = {
   text: PropTypes.string.isRequired,

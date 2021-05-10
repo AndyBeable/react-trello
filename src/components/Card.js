@@ -25,14 +25,15 @@ import Tag from './Tag';
  * - Add the children function that returns your card component and bind everything together
  * --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md#children-function-render-props--function-as-child
  */
-const Card = ({ ...card }) => (
+const Card = (props) => (
   <div className='card'>
-    {card.tags.map((tag, i) => {
+    {props.tags.map((tag, i) => {
       <Tag key={i} text={tag} />;
+      console.log(props.tags);
     })}
     {
       <p>
-        #{card.number} {card.description}
+        #{props.number} {props.description}
       </p>
     }
   </div>

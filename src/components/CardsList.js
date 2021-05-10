@@ -159,7 +159,6 @@ class CardsList extends Component {
   // - Add the children function that returns your cards and bind everything together
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderCards() {
-    console.log(this.props.cards);
     return (
       <ol className='cards'>
         {this.props.cards.map((card, index) => (
